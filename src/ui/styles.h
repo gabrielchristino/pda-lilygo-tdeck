@@ -7,6 +7,11 @@
 extern "C" {
 #endif
 
+// Style: home_btn
+lv_style_t *get_style_home_btn_MAIN_DEFAULT();
+void add_style_home_btn(lv_obj_t *obj);
+void remove_style_home_btn(lv_obj_t *obj);
+
 
 
 #ifdef __cplusplus
