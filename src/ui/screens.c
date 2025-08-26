@@ -46,6 +46,112 @@ static void event_handler_cb_main_btn_tasks(lv_event_t *e) {
     }
 }
 
+static void event_handler_cb_calendar_cal_calendar(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_CLICKED) {
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 2, 0, e);
+    }
+}
+
+static void event_handler_cb_calendar_new_event_txt_event_name(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            const char *value = lv_textarea_get_text(ta);
+            assignStringProperty(flowState, 0, 3, value, "Failed to assign Text in Textarea widget");
+        }
+    }
+}
+
+static void event_handler_cb_calendar_new_event_start_hour(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            int32_t value = lv_roller_get_selected(ta);
+            assignIntegerProperty(flowState, 3, 3, value, "Failed to assign Selected in Roller widget");
+        }
+    }
+}
+
+static void event_handler_cb_calendar_new_event_start_minute(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            int32_t value = lv_roller_get_selected(ta);
+            assignIntegerProperty(flowState, 4, 3, value, "Failed to assign Selected in Roller widget");
+        }
+    }
+}
+
+static void event_handler_cb_calendar_new_event_end_hour(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            int32_t value = lv_roller_get_selected(ta);
+            assignIntegerProperty(flowState, 7, 3, value, "Failed to assign Selected in Roller widget");
+        }
+    }
+}
+
+static void event_handler_cb_calendar_new_event_end_minute(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            int32_t value = lv_roller_get_selected(ta);
+            assignIntegerProperty(flowState, 8, 3, value, "Failed to assign Selected in Roller widget");
+        }
+    }
+}
+
+static void event_handler_cb_calendar_new_event_btn_save(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_CLICKED) {
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 11, 0, e);
+    }
+}
+
+static void event_handler_cb_calendar_new_event_txt_event_date(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            const char *value = lv_textarea_get_text(ta);
+            assignStringProperty(flowState, 13, 3, value, "Failed to assign Text in Textarea widget");
+        }
+    }
+}
+
 static void event_handler_cb_header_obj0(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
@@ -64,15 +170,17 @@ void create_screen_main() {
     objects.main = obj;
     lv_obj_set_pos(obj, 0, 0);
     lv_obj_set_size(obj, 320, 240);
+    lv_obj_set_style_bg_color(obj, lv_color_hex(0xfffffbe8), LV_PART_MAIN | LV_STATE_DEFAULT);
     {
         lv_obj_t *parent_obj = obj;
         {
             // btn_calculator
             lv_obj_t *obj = lv_btn_create(parent_obj);
             objects.btn_calculator = obj;
-            lv_obj_set_pos(obj, 5, 135);
+            lv_obj_set_pos(obj, 5, 100);
             lv_obj_set_size(obj, 100, 100);
             lv_obj_add_event_cb(obj, event_handler_cb_main_btn_calculator, LV_EVENT_ALL, flowState);
+            lv_obj_add_state(obj, LV_STATE_FOCUSED|LV_STATE_FOCUS_KEY);
             add_style_home_btn(obj);
             {
                 lv_obj_t *parent_obj = obj;
@@ -95,7 +203,7 @@ void create_screen_main() {
             // btn_calendar
             lv_obj_t *obj = lv_btn_create(parent_obj);
             objects.btn_calendar = obj;
-            lv_obj_set_pos(obj, 112, 135);
+            lv_obj_set_pos(obj, 110, 100);
             lv_obj_set_size(obj, 100, 100);
             lv_obj_add_event_cb(obj, event_handler_cb_main_btn_calendar, LV_EVENT_ALL, flowState);
             add_style_home_btn(obj);
@@ -120,7 +228,7 @@ void create_screen_main() {
             // btn_tasks
             lv_obj_t *obj = lv_btn_create(parent_obj);
             objects.btn_tasks = obj;
-            lv_obj_set_pos(obj, 215, 135);
+            lv_obj_set_pos(obj, 215, 100);
             lv_obj_set_size(obj, 100, 100);
             lv_obj_add_event_cb(obj, event_handler_cb_main_btn_tasks, LV_EVENT_ALL, flowState);
             add_style_home_btn(obj);
@@ -141,6 +249,24 @@ void create_screen_main() {
                 }
             }
         }
+        {
+            // lbl_main_clock
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.lbl_main_clock = obj;
+            lv_obj_set_pos(obj, 0, 5);
+            lv_obj_set_size(obj, 320, 49);
+            add_style_main_clock(obj);
+            lv_label_set_text(obj, "");
+        }
+        {
+            // lbl_main_date
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.lbl_main_date = obj;
+            lv_obj_set_pos(obj, 0, 54);
+            lv_obj_set_size(obj, 320, LV_SIZE_CONTENT);
+            add_style_main_date(obj);
+            lv_label_set_text(obj, "");
+        }
     }
     
     tick_screen_main();
@@ -149,6 +275,24 @@ void create_screen_main() {
 void tick_screen_main() {
     void *flowState = getFlowState(0, 0);
     (void)flowState;
+    {
+        const char *new_val = evalTextProperty(flowState, 10, 3, "Failed to evaluate Text in Label widget");
+        const char *cur_val = lv_label_get_text(objects.lbl_main_clock);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.lbl_main_clock;
+            lv_label_set_text(objects.lbl_main_clock, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = evalTextProperty(flowState, 11, 3, "Failed to evaluate Text in Label widget");
+        const char *cur_val = lv_label_get_text(objects.lbl_main_date);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.lbl_main_date;
+            lv_label_set_text(objects.lbl_main_date, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
 }
 
 void create_screen_calculator() {
@@ -171,7 +315,7 @@ void create_screen_calculator() {
             lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            create_user_widget_header(obj, getFlowState(flowState, 0), 5);
+            create_user_widget_header(obj, getFlowState(flowState, 0), 7);
         }
     }
     
@@ -181,7 +325,7 @@ void create_screen_calculator() {
 void tick_screen_calculator() {
     void *flowState = getFlowState(0, 1);
     (void)flowState;
-    tick_user_widget_header(getFlowState(flowState, 0), 5);
+    tick_user_widget_header(getFlowState(flowState, 0), 7);
 }
 
 void create_screen_calendar() {
@@ -204,15 +348,18 @@ void create_screen_calendar() {
             lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            create_user_widget_header(obj, getFlowState(flowState, 0), 8);
+            create_user_widget_header(obj, getFlowState(flowState, 0), 11);
         }
         {
+            // cal_calendar
             lv_obj_t *obj = lv_calendar_create(parent_obj);
+            objects.cal_calendar = obj;
             lv_obj_set_pos(obj, 0, 40);
             lv_obj_set_size(obj, 320, 200);
             lv_calendar_header_arrow_create(obj);
-            lv_calendar_set_today_date(obj, 2022, 11, 1);
-            lv_calendar_set_showed_date(obj, 2022, 11);
+            lv_calendar_set_today_date(obj, 2025, 8, 25);
+            lv_calendar_set_showed_date(obj, 2025, 8);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_cal_calendar, LV_EVENT_ALL, flowState);
         }
     }
     
@@ -222,18 +369,31 @@ void create_screen_calendar() {
 void tick_screen_calendar() {
     void *flowState = getFlowState(0, 2);
     (void)flowState;
-    tick_user_widget_header(getFlowState(flowState, 0), 8);
+    tick_user_widget_header(getFlowState(flowState, 0), 11);
 }
 
-void create_screen_tasks() {
+void create_screen_calendar_new_event() {
     void *flowState = getFlowState(0, 3);
     (void)flowState;
     lv_obj_t *obj = lv_obj_create(0);
-    objects.tasks = obj;
+    objects.calendar_new_event = obj;
     lv_obj_set_pos(obj, 0, 0);
     lv_obj_set_size(obj, 320, 240);
     {
         lv_obj_t *parent_obj = obj;
+        {
+            // txt_event_name
+            lv_obj_t *obj = lv_textarea_create(parent_obj);
+            objects.txt_event_name = obj;
+            lv_obj_set_pos(obj, 10, 40);
+            lv_obj_set_size(obj, 300, 36);
+            lv_textarea_set_max_length(obj, 128);
+            lv_textarea_set_placeholder_text(obj, "event name");
+            lv_textarea_set_one_line(obj, true);
+            lv_textarea_set_password_mode(obj, false);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_txt_event_name, LV_EVENT_ALL, flowState);
+            lv_obj_add_state(obj, LV_STATE_FOCUSED|LV_STATE_FOCUS_KEY);
+        }
         {
             lv_obj_t *obj = lv_obj_create(parent_obj);
             objects.obj2 = obj;
@@ -245,7 +405,272 @@ void create_screen_tasks() {
             lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            create_user_widget_header(obj, getFlowState(flowState, 0), 11);
+            create_user_widget_header(obj, getFlowState(flowState, 2), 15);
+        }
+        {
+            // start_hour
+            lv_obj_t *obj = lv_roller_create(parent_obj);
+            objects.start_hour = obj;
+            lv_obj_set_pos(obj, 69, 135);
+            lv_obj_set_size(obj, 40, 60);
+            lv_roller_set_options(obj, "01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12", LV_ROLLER_MODE_INFINITE);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_start_hour, LV_EVENT_ALL, flowState);
+        }
+        {
+            // start_minute
+            lv_obj_t *obj = lv_roller_create(parent_obj);
+            objects.start_minute = obj;
+            lv_obj_set_pos(obj, 113, 135);
+            lv_obj_set_size(obj, 40, 60);
+            lv_roller_set_options(obj, "00\n05\n10\n15\n20\n30\n40\n50", LV_ROLLER_MODE_INFINITE);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_start_minute, LV_EVENT_ALL, flowState);
+        }
+        {
+            // lbl_from
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.lbl_from = obj;
+            lv_obj_set_pos(obj, 69, 117);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            add_style_body_text(obj);
+            lv_label_set_text(obj, "from");
+        }
+        {
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            lv_obj_set_pos(obj, 109, 156);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            add_style_body_text(obj);
+            lv_label_set_text(obj, ":");
+        }
+        {
+            // end_hour
+            lv_obj_t *obj = lv_roller_create(parent_obj);
+            objects.end_hour = obj;
+            lv_obj_set_pos(obj, 168, 135);
+            lv_obj_set_size(obj, 40, 60);
+            lv_roller_set_options(obj, "01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12", LV_ROLLER_MODE_INFINITE);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_end_hour, LV_EVENT_ALL, flowState);
+        }
+        {
+            // end_minute
+            lv_obj_t *obj = lv_roller_create(parent_obj);
+            objects.end_minute = obj;
+            lv_obj_set_pos(obj, 212, 135);
+            lv_obj_set_size(obj, 40, 60);
+            lv_roller_set_options(obj, "00\n05\n10\n15\n20\n30\n40\n50", LV_ROLLER_MODE_INFINITE);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_end_minute, LV_EVENT_ALL, flowState);
+        }
+        {
+            // lbl_to
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.lbl_to = obj;
+            lv_obj_set_pos(obj, 168, 117);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            add_style_body_text(obj);
+            lv_label_set_text(obj, "to");
+        }
+        {
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            lv_obj_set_pos(obj, 208, 156);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            add_style_body_text(obj);
+            lv_label_set_text(obj, ":");
+        }
+        {
+            // btn_save
+            lv_obj_t *obj = lv_btn_create(parent_obj);
+            objects.btn_save = obj;
+            lv_obj_set_pos(obj, 144, 203);
+            lv_obj_set_size(obj, 32, 32);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_btn_save, LV_EVENT_ALL, flowState);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    objects.obj5 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "");
+                }
+            }
+        }
+        {
+            // txt_event_date
+            lv_obj_t *obj = lv_textarea_create(parent_obj);
+            objects.txt_event_date = obj;
+            lv_obj_set_pos(obj, 11, 81);
+            lv_obj_set_size(obj, 300, 36);
+            lv_textarea_set_max_length(obj, 128);
+            lv_textarea_set_placeholder_text(obj, "event date");
+            lv_textarea_set_one_line(obj, true);
+            lv_textarea_set_password_mode(obj, false);
+            lv_obj_add_event_cb(obj, event_handler_cb_calendar_new_event_txt_event_date, LV_EVENT_ALL, flowState);
+            lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
+        }
+        {
+            // keyboard
+            lv_obj_t *obj = lv_keyboard_create(parent_obj);
+            objects.keyboard = obj;
+            lv_obj_set_pos(obj, 0, 169);
+            lv_obj_set_size(obj, 163, 69);
+            lv_obj_set_style_align(obj, LV_ALIGN_DEFAULT, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+    }
+    lv_keyboard_set_textarea(objects.keyboard, objects.txt_event_name);
+    
+    tick_screen_calendar_new_event();
+}
+
+void tick_screen_calendar_new_event() {
+    void *flowState = getFlowState(0, 3);
+    (void)flowState;
+    {
+        const char *new_val = evalTextProperty(flowState, 0, 3, "Failed to evaluate Text in Textarea widget");
+        const char *cur_val = lv_textarea_get_text(objects.txt_event_name);
+        uint32_t max_length = lv_textarea_get_max_length(objects.txt_event_name);
+        if (strncmp(new_val, cur_val, max_length) != 0) {
+            tick_value_change_obj = objects.txt_event_name;
+            lv_textarea_set_text(objects.txt_event_name, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    tick_user_widget_header(getFlowState(flowState, 2), 15);
+    {
+        if (!(lv_obj_get_state(objects.start_hour) & LV_STATE_EDITED)) {
+            int32_t new_val = evalIntegerProperty(flowState, 3, 3, "Failed to evaluate Selected in Roller widget");
+            int32_t cur_val = lv_roller_get_selected(objects.start_hour);
+            if (new_val != cur_val) {
+                tick_value_change_obj = objects.start_hour;
+                lv_roller_set_selected(objects.start_hour, new_val, LV_ANIM_OFF);
+                tick_value_change_obj = NULL;
+            }
+        }
+    }
+    {
+        if (!(lv_obj_get_state(objects.start_minute) & LV_STATE_EDITED)) {
+            int32_t new_val = evalIntegerProperty(flowState, 4, 3, "Failed to evaluate Selected in Roller widget");
+            int32_t cur_val = lv_roller_get_selected(objects.start_minute);
+            if (new_val != cur_val) {
+                tick_value_change_obj = objects.start_minute;
+                lv_roller_set_selected(objects.start_minute, new_val, LV_ANIM_OFF);
+                tick_value_change_obj = NULL;
+            }
+        }
+    }
+    {
+        if (!(lv_obj_get_state(objects.end_hour) & LV_STATE_EDITED)) {
+            int32_t new_val = evalIntegerProperty(flowState, 7, 3, "Failed to evaluate Selected in Roller widget");
+            int32_t cur_val = lv_roller_get_selected(objects.end_hour);
+            if (new_val != cur_val) {
+                tick_value_change_obj = objects.end_hour;
+                lv_roller_set_selected(objects.end_hour, new_val, LV_ANIM_OFF);
+                tick_value_change_obj = NULL;
+            }
+        }
+    }
+    {
+        if (!(lv_obj_get_state(objects.end_minute) & LV_STATE_EDITED)) {
+            int32_t new_val = evalIntegerProperty(flowState, 8, 3, "Failed to evaluate Selected in Roller widget");
+            int32_t cur_val = lv_roller_get_selected(objects.end_minute);
+            if (new_val != cur_val) {
+                tick_value_change_obj = objects.end_minute;
+                lv_roller_set_selected(objects.end_minute, new_val, LV_ANIM_OFF);
+                tick_value_change_obj = NULL;
+            }
+        }
+    }
+    {
+        const char *new_val = evalTextProperty(flowState, 12, 3, "Failed to evaluate Text in Label widget");
+        const char *cur_val = lv_label_get_text(objects.obj5);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.obj5;
+            lv_label_set_text(objects.obj5, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = evalTextProperty(flowState, 13, 3, "Failed to evaluate Text in Textarea widget");
+        const char *cur_val = lv_textarea_get_text(objects.txt_event_date);
+        uint32_t max_length = lv_textarea_get_max_length(objects.txt_event_date);
+        if (strncmp(new_val, cur_val, max_length) != 0) {
+            tick_value_change_obj = objects.txt_event_date;
+            lv_textarea_set_text(objects.txt_event_date, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+}
+
+void create_screen_calendar_events_list() {
+    void *flowState = getFlowState(0, 4);
+    (void)flowState;
+    lv_obj_t *obj = lv_obj_create(0);
+    objects.calendar_events_list = obj;
+    lv_obj_set_pos(obj, 0, 0);
+    lv_obj_set_size(obj, 320, 240);
+    {
+        lv_obj_t *parent_obj = obj;
+        {
+            lv_obj_t *obj = lv_obj_create(parent_obj);
+            objects.obj3 = obj;
+            lv_obj_set_pos(obj, 0, 0);
+            lv_obj_set_size(obj, 320, 40);
+            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            create_user_widget_header(obj, getFlowState(flowState, 0), 19);
+        }
+        {
+            lv_obj_t *obj = lv_dropdown_create(parent_obj);
+            objects.obj6 = obj;
+            lv_obj_set_pos(obj, 0, 40);
+            lv_obj_set_size(obj, 320, LV_SIZE_CONTENT);
+            lv_dropdown_set_options(obj, "");
+            lv_dropdown_set_selected(obj, 0);
+        }
+    }
+    
+    tick_screen_calendar_events_list();
+}
+
+void tick_screen_calendar_events_list() {
+    void *flowState = getFlowState(0, 4);
+    (void)flowState;
+    tick_user_widget_header(getFlowState(flowState, 0), 19);
+    {
+        const char *new_val = evalStringArrayPropertyAndJoin(flowState, 2, 3, "Failed to evaluate Options in Dropdown widget", "\n");
+        const char *cur_val = lv_dropdown_get_options(objects.obj6);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.obj6;
+            lv_dropdown_set_options(objects.obj6, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+}
+
+void create_screen_tasks() {
+    void *flowState = getFlowState(0, 5);
+    (void)flowState;
+    lv_obj_t *obj = lv_obj_create(0);
+    objects.tasks = obj;
+    lv_obj_set_pos(obj, 0, 0);
+    lv_obj_set_size(obj, 320, 240);
+    {
+        lv_obj_t *parent_obj = obj;
+        {
+            lv_obj_t *obj = lv_obj_create(parent_obj);
+            objects.obj4 = obj;
+            lv_obj_set_pos(obj, 0, 0);
+            lv_obj_set_size(obj, 320, 40);
+            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            create_user_widget_header(obj, getFlowState(flowState, 0), 23);
         }
     }
     
@@ -253,9 +678,9 @@ void create_screen_tasks() {
 }
 
 void tick_screen_tasks() {
-    void *flowState = getFlowState(0, 3);
+    void *flowState = getFlowState(0, 5);
     (void)flowState;
-    tick_user_widget_header(getFlowState(flowState, 0), 11);
+    tick_user_widget_header(getFlowState(flowState, 0), 23);
 }
 
 void create_user_widget_header(lv_obj_t *parent_obj, void *flowState, int startWidgetIndex) {
@@ -267,23 +692,24 @@ void create_user_widget_header(lv_obj_t *parent_obj, void *flowState, int startW
         {
             lv_obj_t *obj = lv_btn_create(parent_obj);
             ((lv_obj_t **)&objects)[startWidgetIndex + 0] = obj;
-            lv_obj_set_pos(obj, 0, 0);
-            lv_obj_set_size(obj, 40, 40);
+            lv_obj_set_pos(obj, 4, 4);
+            lv_obj_set_size(obj, 32, 32);
             lv_obj_add_event_cb(obj, event_handler_cb_header_obj0, LV_EVENT_ALL, flowState);
             {
                 lv_obj_t *parent_obj = obj;
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
+                    ((lv_obj_t **)&objects)[startWidgetIndex + 1] = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text(obj, "<");
+                    lv_label_set_text(obj, "");
                 }
             }
         }
         {
             lv_obj_t *obj = lv_label_create(parent_obj);
-            ((lv_obj_t **)&objects)[startWidgetIndex + 1] = obj;
+            ((lv_obj_t **)&objects)[startWidgetIndex + 2] = obj;
             lv_obj_set_pos(obj, 0, 0);
             lv_obj_set_size(obj, 320, 40);
             lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -298,11 +724,20 @@ void tick_user_widget_header(void *flowState, int startWidgetIndex) {
     (void)flowState;
     (void)startWidgetIndex;
     {
-        const char *new_val = evalTextProperty(flowState, 3, 3, "Failed to evaluate Text in Label widget");
+        const char *new_val = evalTextProperty(flowState, 0, 3, "Failed to evaluate Text in Label widget");
         const char *cur_val = lv_label_get_text(((lv_obj_t **)&objects)[startWidgetIndex + 1]);
         if (strcmp(new_val, cur_val) != 0) {
             tick_value_change_obj = ((lv_obj_t **)&objects)[startWidgetIndex + 1];
             lv_label_set_text(((lv_obj_t **)&objects)[startWidgetIndex + 1], new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = evalTextProperty(flowState, 3, 3, "Failed to evaluate Text in Label widget");
+        const char *cur_val = lv_label_get_text(((lv_obj_t **)&objects)[startWidgetIndex + 2]);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = ((lv_obj_t **)&objects)[startWidgetIndex + 2];
+            lv_label_set_text(((lv_obj_t **)&objects)[startWidgetIndex + 2], new_val);
             tick_value_change_obj = NULL;
         }
     }
@@ -312,9 +747,9 @@ void tick_user_widget_header(void *flowState, int startWidgetIndex) {
 extern void add_style(lv_obj_t *obj, int32_t styleIndex);
 extern void remove_style(lv_obj_t *obj, int32_t styleIndex);
 
-static const char *screen_names[] = { "Main", "Calculator", "Calendar", "Tasks" };
-static const char *object_names[] = { "main", "calculator", "calendar", "tasks", "obj0", "obj0__obj0", "obj0__obj1", "obj1", "obj1__obj0", "obj1__obj1", "obj2", "obj2__obj0", "obj2__obj1", "btn_calculator", "btn_calendar", "btn_tasks" };
-static const char *style_names[] = { "home_btn" };
+static const char *screen_names[] = { "Main", "Calculator", "Calendar", "Calendar_NewEvent", "Calendar_EventsList", "Tasks" };
+static const char *object_names[] = { "main", "calculator", "calendar", "calendar_new_event", "calendar_events_list", "tasks", "obj0", "obj0__obj0", "obj0__obj1", "obj0__obj2", "obj1", "obj1__obj0", "obj1__obj1", "obj1__obj2", "obj2", "obj2__obj0", "obj2__obj1", "obj2__obj2", "obj3", "obj3__obj0", "obj3__obj1", "obj3__obj2", "obj4", "obj4__obj0", "obj4__obj1", "obj4__obj2", "btn_calculator", "btn_calendar", "btn_tasks", "cal_calendar", "btn_save", "lbl_main_clock", "lbl_main_date", "txt_event_name", "start_hour", "start_minute", "lbl_from", "end_hour", "end_minute", "lbl_to", "txt_event_date", "keyboard", "obj5", "obj6" };
+static const char *style_names[] = { "home_btn", "MainClock", "MainDate", "body_text" };
 
 
 typedef void (*tick_screen_func_t)();
@@ -322,6 +757,8 @@ tick_screen_func_t tick_screen_funcs[] = {
     tick_screen_main,
     tick_screen_calculator,
     tick_screen_calendar,
+    tick_screen_calendar_new_event,
+    tick_screen_calendar_events_list,
     tick_screen_tasks,
 };
 void tick_screen(int screen_index) {
@@ -345,5 +782,7 @@ void create_screens() {
     create_screen_main();
     create_screen_calculator();
     create_screen_calendar();
+    create_screen_calendar_new_event();
+    create_screen_calendar_events_list();
     create_screen_tasks();
 }

@@ -36,6 +36,94 @@ void remove_style_home_btn(lv_obj_t *obj) {
 };
 
 //
+// Style: MainClock
+//
+
+void init_style_main_clock_MAIN_DEFAULT(lv_style_t *style) {
+    lv_style_set_align(style, LV_ALIGN_TOP_MID);
+    lv_style_set_text_font(style, &lv_font_montserrat_44);
+    lv_style_set_text_align(style, LV_TEXT_ALIGN_CENTER);
+};
+
+lv_style_t *get_style_main_clock_MAIN_DEFAULT() {
+    static lv_style_t *style;
+    if (!style) {
+        style = lv_mem_alloc(sizeof(lv_style_t));
+        lv_style_init(style);
+        init_style_main_clock_MAIN_DEFAULT(style);
+    }
+    return style;
+};
+
+void add_style_main_clock(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_add_style(obj, get_style_main_clock_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+void remove_style_main_clock(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_remove_style(obj, get_style_main_clock_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+//
+// Style: MainDate
+//
+
+void init_style_main_date_MAIN_DEFAULT(lv_style_t *style) {
+    lv_style_set_align(style, LV_ALIGN_TOP_MID);
+    lv_style_set_text_font(style, &lv_font_montserrat_24);
+    lv_style_set_text_align(style, LV_TEXT_ALIGN_CENTER);
+};
+
+lv_style_t *get_style_main_date_MAIN_DEFAULT() {
+    static lv_style_t *style;
+    if (!style) {
+        style = lv_mem_alloc(sizeof(lv_style_t));
+        lv_style_init(style);
+        init_style_main_date_MAIN_DEFAULT(style);
+    }
+    return style;
+};
+
+void add_style_main_date(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_add_style(obj, get_style_main_date_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+void remove_style_main_date(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_remove_style(obj, get_style_main_date_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+//
+// Style: body_text
+//
+
+void init_style_body_text_MAIN_DEFAULT(lv_style_t *style) {
+    lv_style_set_text_font(style, &lv_font_montserrat_16);
+};
+
+lv_style_t *get_style_body_text_MAIN_DEFAULT() {
+    static lv_style_t *style;
+    if (!style) {
+        style = lv_mem_alloc(sizeof(lv_style_t));
+        lv_style_init(style);
+        init_style_body_text_MAIN_DEFAULT(style);
+    }
+    return style;
+};
+
+void add_style_body_text(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_add_style(obj, get_style_body_text_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+void remove_style_body_text(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_remove_style(obj, get_style_body_text_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+//
 //
 //
 
@@ -43,6 +131,9 @@ void add_style(lv_obj_t *obj, int32_t styleIndex) {
     typedef void (*AddStyleFunc)(lv_obj_t *obj);
     static const AddStyleFunc add_style_funcs[] = {
         add_style_home_btn,
+        add_style_main_clock,
+        add_style_main_date,
+        add_style_body_text,
     };
     add_style_funcs[styleIndex](obj);
 }
@@ -51,6 +142,9 @@ void remove_style(lv_obj_t *obj, int32_t styleIndex) {
     typedef void (*RemoveStyleFunc)(lv_obj_t *obj);
     static const RemoveStyleFunc remove_style_funcs[] = {
         remove_style_home_btn,
+        remove_style_main_clock,
+        remove_style_main_date,
+        remove_style_body_text,
     };
     remove_style_funcs[styleIndex](obj);
 }
