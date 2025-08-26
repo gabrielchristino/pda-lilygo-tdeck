@@ -26,19 +26,24 @@ typedef struct _objects_t {
     lv_obj_t *obj2__obj0;
     lv_obj_t *obj2__obj1;
     lv_obj_t *obj2__obj2;
+    lv_obj_t *is_loading;
+    lv_obj_t *is_loading__obj3;
     lv_obj_t *obj3;
     lv_obj_t *obj3__obj0;
     lv_obj_t *obj3__obj1;
     lv_obj_t *obj3__obj2;
     lv_obj_t *obj4;
-    lv_obj_t *obj4__obj0;
-    lv_obj_t *obj4__obj1;
-    lv_obj_t *obj4__obj2;
+    lv_obj_t *obj4__obj3;
+    lv_obj_t *obj5;
+    lv_obj_t *obj5__obj0;
+    lv_obj_t *obj5__obj1;
+    lv_obj_t *obj5__obj2;
     lv_obj_t *btn_calculator;
     lv_obj_t *btn_calendar;
     lv_obj_t *btn_tasks;
     lv_obj_t *cal_calendar;
     lv_obj_t *btn_save;
+    lv_obj_t *obj6;
     lv_obj_t *lbl_main_clock;
     lv_obj_t *lbl_main_date;
     lv_obj_t *txt_event_name;
@@ -50,8 +55,9 @@ typedef struct _objects_t {
     lv_obj_t *lbl_to;
     lv_obj_t *txt_event_date;
     lv_obj_t *keyboard;
-    lv_obj_t *obj5;
-    lv_obj_t *obj6;
+    lv_obj_t *obj7;
+    lv_obj_t *obj8;
+    lv_obj_t *obj9;
 } objects_t;
 
 extern objects_t objects;
@@ -85,6 +91,9 @@ void tick_screen_tasks();
 
 void create_user_widget_header(lv_obj_t *parent_obj, void *flowState, int startWidgetIndex);
 void tick_user_widget_header(void *flowState, int startWidgetIndex);
+
+void create_user_widget_loading_screen(lv_obj_t *parent_obj, void *flowState, int startWidgetIndex);
+void tick_user_widget_loading_screen(void *flowState, int startWidgetIndex);
 
 void tick_screen_by_id(enum ScreensEnum screenId);
 void tick_screen(int screen_index);
