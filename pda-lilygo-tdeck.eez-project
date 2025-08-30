@@ -3311,79 +3311,11 @@
           "value": "9"
         },
         {
-          "objID": "3944784f-c5be-46fe-f836-f320bfc93dda",
-          "type": "SetVariableActionComponent",
-          "left": 376,
-          "top": 178,
-          "width": 189,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "a9f91051-badd-451e-9f6a-e52a011893ca",
-              "variable": "calc_function",
-              "value": "\"minus\""
-            }
-          ]
-        },
-        {
-          "objID": "bfe8e204-a5c4-4372-f080-959148db467c",
-          "type": "SetVariableActionComponent",
-          "left": 376,
-          "top": 118,
-          "width": 183,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "0c5d8f25-a9c3-43dd-d38b-3fcd620f6867",
-              "variable": "calc_function",
-              "value": "\"plus\""
-            }
-          ]
-        },
-        {
-          "objID": "20c5ba07-a662-41ef-b51c-51e1673a4d42",
-          "type": "SetVariableActionComponent",
-          "left": 373,
-          "top": 61,
-          "width": 189,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "ca30d056-795f-48f4-ec6c-a0f66644f706",
-              "variable": "calc_function",
-              "value": "\"multi\""
-            }
-          ]
-        },
-        {
-          "objID": "15b75ae7-caef-4f03-830c-a73d4e60c798",
-          "type": "SetVariableActionComponent",
-          "left": 373,
-          "top": 0,
-          "width": 183,
-          "height": 57,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "439e017b-5e96-404d-9052-6b49d3cc9856",
-              "variable": "calc_function",
-              "value": "\"divi\""
-            }
-          ]
-        },
-        {
           "objID": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
           "type": "SetVariableActionComponent",
-          "left": 452,
-          "top": 483,
-          "width": 314,
+          "left": 255,
+          "top": 449,
+          "width": 351,
           "height": 57,
           "customInputs": [
             {
@@ -3397,20 +3329,64 @@
             {
               "objID": "0185dc2e-5485-404d-917c-830717323dbf",
               "variable": "calc_main_display",
-              "value": "calc_first_number"
+              "value": "calc_main_display+valor"
             }
           ]
         },
         {
-          "objID": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
+          "objID": "1779f7ca-bb87-42c8-fc25-0460d004d91b",
+          "type": "ConstantActionComponent",
+          "left": 394,
+          "top": -23,
+          "width": 87,
+          "height": 52,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "\"divi\"\n"
+        },
+        {
+          "objID": "e1c0a982-8a5e-4a95-84b5-9317628c51bd",
+          "type": "ConstantActionComponent",
+          "left": 394,
+          "top": 35,
+          "width": 87,
+          "height": 52,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "\"multi\""
+        },
+        {
+          "objID": "320012af-7a21-43e5-e949-fdd0e57a0091",
+          "type": "ConstantActionComponent",
+          "left": 394,
+          "top": 94,
+          "width": 87,
+          "height": 52,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "\"plus\""
+        },
+        {
+          "objID": "fc4ae258-6a22-4cdf-aac8-efe99f264f8a",
+          "type": "ConstantActionComponent",
+          "left": 394,
+          "top": 157,
+          "width": 87,
+          "height": 52,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "\"minus\""
+        },
+        {
+          "objID": "da816f07-17ad-4278-ba80-83b68cc718f2",
           "type": "SetVariableActionComponent",
-          "left": 64,
-          "top": 400,
-          "width": 351,
-          "height": 57,
+          "left": 594,
+          "top": 24,
+          "width": 314,
+          "height": 101,
           "customInputs": [
             {
-              "objID": "a975695a-da4d-443c-ed93-5d75555bc619",
+              "objID": "5fdc9ad9-ac0a-47b8-d194-411585ae65d4",
               "name": "valor",
               "type": "string"
             }
@@ -3418,9 +3394,189 @@
           "customOutputs": [],
           "entries": [
             {
-              "objID": "cdc1eacd-e51a-474b-b8e6-6d71df12d9b8",
+              "objID": "42d93b46-d0a7-45a5-bb84-7265eba0d1ec",
+              "variable": "calc_function",
+              "value": "valor"
+            },
+            {
+              "objID": "31f3abc6-a41a-4984-9048-66d15e6fa999",
               "variable": "calc_first_number",
-              "value": "calc_first_number+valor"
+              "value": "calc_main_display"
+            },
+            {
+              "objID": "3aa04dd6-9e9d-4b58-d166-a408f6fe5e93",
+              "variable": "calc_main_display",
+              "value": "\"\""
+            }
+          ]
+        },
+        {
+          "objID": "0ba5f000-010a-4f31-bdfe-c39a68838d83",
+          "type": "SetVariableActionComponent",
+          "left": 562,
+          "top": 179,
+          "width": 281,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "5be5f270-f995-4762-9467-988995e270f1",
+              "variable": "calc_second_number",
+              "value": "calc_main_display"
+            }
+          ]
+        },
+        {
+          "objID": "07b5c5a4-a406-41c1-b0a3-76e7b567d224",
+          "type": "SwitchActionComponent",
+          "left": 917,
+          "top": 113,
+          "width": 227,
+          "height": 111,
+          "customInputs": [],
+          "customOutputs": [],
+          "tests": [
+            {
+              "objID": "562c5947-410d-4750-ac0c-4c820a68608a",
+              "condition": "calc_function == \"divi\"",
+              "outputName": "divi",
+              "outputValue": "Flow.parseFloat(calc_first_number) / Flow.parseFloat(calc_second_number)"
+            },
+            {
+              "objID": "aea6b11b-2826-4414-8481-e33f404e0035",
+              "condition": "calc_function == \"multi\"",
+              "outputName": "multi",
+              "outputValue": "Flow.parseFloat(calc_first_number) * Flow.parseFloat(calc_second_number)"
+            },
+            {
+              "objID": "94aaba3c-dc6f-4f5b-8286-577836ee4df1",
+              "condition": "calc_function == \"plus\"",
+              "outputName": "plus",
+              "outputValue": "Flow.parseFloat(calc_first_number) + Flow.parseFloat(calc_second_number)"
+            },
+            {
+              "objID": "dc19b14e-1f12-4346-d4c8-e57a61566599",
+              "condition": "calc_function == \"minus\"",
+              "outputName": "minus",
+              "outputValue": "Flow.parseFloat(calc_first_number) - Flow.parseFloat(calc_second_number)"
+            }
+          ]
+        },
+        {
+          "objID": "e362f2fe-28b6-4f3f-f1d8-220e876d1694",
+          "type": "SetVariableActionComponent",
+          "left": 1294,
+          "top": 115,
+          "width": 241,
+          "height": 57,
+          "customInputs": [
+            {
+              "objID": "d6f8c3fd-b400-4c3d-82fc-f2d932452407",
+              "name": "valor",
+              "type": "string"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "e11d0fae-4972-468d-a84a-06d9d94ff0a5",
+              "variable": "calc_main_display",
+              "value": "valor"
+            }
+          ]
+        },
+        {
+          "objID": "31aa89d2-676c-4245-dc92-cfef39035215",
+          "type": "SetVariableActionComponent",
+          "left": 9,
+          "top": -146,
+          "width": 189,
+          "height": 123,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "0bb16b15-0154-4886-ec25-6ac84bdcda48",
+              "variable": "calc_first_number",
+              "value": "\"\""
+            },
+            {
+              "objID": "4785be29-212d-47eb-f3fd-33e43a8181e0",
+              "variable": "calc_second_number",
+              "value": "\"\""
+            },
+            {
+              "objID": "974cda3f-3ec4-47aa-af03-62081973b91c",
+              "variable": "calc_main_display",
+              "value": "\"\""
+            },
+            {
+              "objID": "a5096541-7aca-45e3-e8c8-2f5599f2fb5c",
+              "variable": "calc_function",
+              "value": "\"\""
+            }
+          ]
+        },
+        {
+          "objID": "eb6b2767-aed9-48bc-a925-73a387353a1e",
+          "type": "SetVariableActionComponent",
+          "left": 315,
+          "top": -167,
+          "width": 625,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "648553c9-7ced-4cb5-97a6-4020fd837b53",
+              "variable": "calc_main_display",
+              "value": "String.substring(calc_main_display, 0, String.length(calc_main_display)-1)"
+            }
+          ]
+        },
+        {
+          "objID": "09b1afc6-3058-42f0-cd56-726bd512b453",
+          "type": "SetVariableActionComponent",
+          "left": 311,
+          "top": -85,
+          "width": 398,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "f10c76c7-9a1b-42e2-aeaf-051fcb35d7f6",
+              "variable": "calc_main_display",
+              "value": "Flow.parseFloat(calc_main_display)/100"
+            }
+          ]
+        },
+        {
+          "objID": "b63fee01-6a73-4383-8af6-9a0d590e8403",
+          "type": "ConstantActionComponent",
+          "left": -205,
+          "top": 291,
+          "width": 87,
+          "height": 52,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "\".\""
+        },
+        {
+          "objID": "d08747c6-8661-493c-dc5a-8bad1cf2656e",
+          "type": "SetVariableActionComponent",
+          "left": -105,
+          "top": 427,
+          "width": 380,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "f7d9be9f-4d7d-4564-dcdf-ce585a33b339",
+              "variable": "calc_main_display",
+              "value": "-Flow.parseFloat(calc_main_display)"
             }
           ]
         }
@@ -3497,73 +3653,213 @@
           "input": "@seqin"
         },
         {
-          "objID": "6a753fed-153c-4619-b820-1dffcdac9105",
-          "source": "fb462f01-4b2e-4289-f61b-1b8764111dca",
-          "output": "CLICKED",
-          "target": "3944784f-c5be-46fe-f836-f320bfc93dda",
-          "input": "@seqin"
-        },
-        {
-          "objID": "e0f9f1f4-25a4-4398-e44b-0fe5f2a4068f",
-          "source": "45512f85-0f7f-462f-9cc7-f0d222e104d6",
-          "output": "CLICKED",
-          "target": "bfe8e204-a5c4-4372-f080-959148db467c",
-          "input": "@seqin"
-        },
-        {
-          "objID": "e917cebe-979a-49db-d9ac-11169a7aea4f",
-          "source": "e648515c-3705-4271-9836-e50dc691cbd9",
-          "output": "CLICKED",
-          "target": "15b75ae7-caef-4f03-830c-a73d4e60c798",
-          "input": "@seqin"
-        },
-        {
-          "objID": "ae948457-b260-4aa4-bc93-b9f545943010",
-          "source": "5e1706e9-4c0a-4c4b-b68c-e3c5be1a48b3",
-          "output": "CLICKED",
-          "target": "20c5ba07-a662-41ef-b51c-51e1673a4d42",
-          "input": "@seqin"
-        },
-        {
-          "objID": "c8f4cf43-97ed-4fc9-e565-0912fbd45622",
-          "source": "5df40317-713a-4c5e-8a5c-f3544f2a2896",
-          "output": "value",
-          "target": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
-          "input": "valor"
-        },
-        {
-          "objID": "4ed7e823-6e40-4cb7-8730-05eea69b6cd0",
-          "source": "29fb0f80-95f4-4bc5-b2c2-afa6767acfae",
-          "output": "value",
-          "target": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
-          "input": "valor"
-        },
-        {
-          "objID": "91a931a4-f561-4b1a-ab5a-d3e5070ac188",
+          "objID": "da7760a9-a5e1-442c-d591-fd9038e13d08",
           "source": "2f963b15-3bc9-400c-dfc8-b76ba595f352",
           "output": "value",
-          "target": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
           "input": "valor"
         },
         {
-          "objID": "c7c88b66-fb97-4ab7-bb36-1a10b90c236f",
+          "objID": "281bc0fd-d58f-430d-e8c6-045c3fcf6a9c",
+          "source": "5df40317-713a-4c5e-8a5c-f3544f2a2896",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "c6108416-e2ff-4889-87c4-b219aeb13d14",
+          "source": "29fb0f80-95f4-4bc5-b2c2-afa6767acfae",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "84fcc5af-2703-4fa9-c658-78403096d129",
           "source": "a6f5e6f4-6851-48f8-8fe2-ae4516ec8af4",
           "output": "value",
-          "target": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
           "input": "valor"
         },
         {
-          "objID": "8f56c11a-e30f-424a-82c5-28fd96f97cb6",
+          "objID": "51f42544-8f02-45ed-eebe-6ce9cad9d36c",
           "source": "2ca4d9c9-e1f5-4610-8e6d-25257151046d",
           "output": "value",
-          "target": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
           "input": "valor"
         },
         {
-          "objID": "2ad1f430-a996-49f6-c6d2-c0176f651d54",
-          "source": "fa2cda5f-e0ad-438b-92b4-419b3b603fae",
-          "output": "@seqout",
+          "objID": "d0a15290-2c40-4150-b954-28ebe70f7e04",
+          "source": "06ce8166-f9ba-43c4-8409-aaabec0bd8f5",
+          "output": "value",
           "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "4ab62f9e-bbed-49a6-c21a-3b348f17ba40",
+          "source": "9e84d1ef-220d-45b5-fd72-68100e4440c7",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "cdf3c111-07f6-4573-fc6f-76c8214dd762",
+          "source": "3f55ed6c-5617-4b81-f84c-5eb6e5f9ba4b",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "177fed17-98fe-44c3-e4b1-a8fbaa02e01a",
+          "source": "f4bbc358-6aa5-40af-f7a3-02ea7aeac250",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "a643e4b2-4447-40b6-ff17-cd29f67674db",
+          "source": "382da712-5281-44b8-b43e-b9048369f8d1",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "d3c0acf5-1c04-44f3-d599-59c647ebd4ef",
+          "source": "e648515c-3705-4271-9836-e50dc691cbd9",
+          "output": "CLICKED",
+          "target": "1779f7ca-bb87-42c8-fc25-0460d004d91b",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6fe9834a-c274-488c-aa0c-39d1aa1f0f1d",
+          "source": "5e1706e9-4c0a-4c4b-b68c-e3c5be1a48b3",
+          "output": "CLICKED",
+          "target": "e1c0a982-8a5e-4a95-84b5-9317628c51bd",
+          "input": "@seqin"
+        },
+        {
+          "objID": "8caf8e34-f033-4476-b960-a6ffd0de0660",
+          "source": "45512f85-0f7f-462f-9cc7-f0d222e104d6",
+          "output": "CLICKED",
+          "target": "320012af-7a21-43e5-e949-fdd0e57a0091",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f32bc37c-91d8-4fa1-8119-a41aecf38f62",
+          "source": "fb462f01-4b2e-4289-f61b-1b8764111dca",
+          "output": "CLICKED",
+          "target": "fc4ae258-6a22-4cdf-aac8-efe99f264f8a",
+          "input": "@seqin"
+        },
+        {
+          "objID": "7a3cf5f2-c90f-49d6-f668-a9da3d2fbe34",
+          "source": "1779f7ca-bb87-42c8-fc25-0460d004d91b",
+          "output": "value",
+          "target": "da816f07-17ad-4278-ba80-83b68cc718f2",
+          "input": "valor"
+        },
+        {
+          "objID": "e1729e46-dae6-41fa-b7f0-fb0cd7c9baee",
+          "source": "e1c0a982-8a5e-4a95-84b5-9317628c51bd",
+          "output": "value",
+          "target": "da816f07-17ad-4278-ba80-83b68cc718f2",
+          "input": "valor"
+        },
+        {
+          "objID": "967c1d81-67b2-496d-b5bd-91a2aab5b5a1",
+          "source": "320012af-7a21-43e5-e949-fdd0e57a0091",
+          "output": "value",
+          "target": "da816f07-17ad-4278-ba80-83b68cc718f2",
+          "input": "valor"
+        },
+        {
+          "objID": "4a96dc88-c968-4d7b-daed-c24cd55c3c05",
+          "source": "fc4ae258-6a22-4cdf-aac8-efe99f264f8a",
+          "output": "value",
+          "target": "da816f07-17ad-4278-ba80-83b68cc718f2",
+          "input": "valor"
+        },
+        {
+          "objID": "3d18e439-8374-473f-af17-2c06e43cd53f",
+          "source": "942e1b6d-a490-40b3-eec0-fb4dddbe625c",
+          "output": "CLICKED",
+          "target": "0ba5f000-010a-4f31-bdfe-c39a68838d83",
+          "input": "@seqin"
+        },
+        {
+          "objID": "25e4e948-d56e-4258-d1cb-778d816502f8",
+          "source": "0ba5f000-010a-4f31-bdfe-c39a68838d83",
+          "output": "@seqout",
+          "target": "07b5c5a4-a406-41c1-b0a3-76e7b567d224",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3c511eb3-7200-4815-c0d4-99b0c584c8eb",
+          "source": "07b5c5a4-a406-41c1-b0a3-76e7b567d224",
+          "output": "divi",
+          "target": "e362f2fe-28b6-4f3f-f1d8-220e876d1694",
+          "input": "valor"
+        },
+        {
+          "objID": "a93649fc-7198-4974-bf86-c35c5529442c",
+          "source": "07b5c5a4-a406-41c1-b0a3-76e7b567d224",
+          "output": "multi",
+          "target": "e362f2fe-28b6-4f3f-f1d8-220e876d1694",
+          "input": "valor"
+        },
+        {
+          "objID": "4d1efd6d-9e18-4379-d9f0-11e87d96cdf4",
+          "source": "07b5c5a4-a406-41c1-b0a3-76e7b567d224",
+          "output": "plus",
+          "target": "e362f2fe-28b6-4f3f-f1d8-220e876d1694",
+          "input": "valor"
+        },
+        {
+          "objID": "a4122063-a153-4208-cf10-6429c6da1f22",
+          "source": "07b5c5a4-a406-41c1-b0a3-76e7b567d224",
+          "output": "minus",
+          "target": "e362f2fe-28b6-4f3f-f1d8-220e876d1694",
+          "input": "valor"
+        },
+        {
+          "objID": "1b09fef4-9232-4b8b-8491-8a07e0fcaa49",
+          "source": "c5398a28-37e8-452c-f789-b0b85c480fb7",
+          "output": "CLICKED",
+          "target": "31aa89d2-676c-4245-dc92-cfef39035215",
+          "input": "@seqin"
+        },
+        {
+          "objID": "899b0d44-a33a-4015-b637-637b25e8ac2a",
+          "source": "362e1c8f-5939-4dcb-8506-5a63c8b93754",
+          "output": "CLICKED",
+          "target": "eb6b2767-aed9-48bc-a925-73a387353a1e",
+          "input": "@seqin"
+        },
+        {
+          "objID": "29ea0533-e71c-4238-c22b-554da62e2524",
+          "source": "554d2bcc-dae3-41f1-abb1-075afdfa4b38",
+          "output": "CLICKED",
+          "target": "09b1afc6-3058-42f0-cd56-726bd512b453",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6e9f5f82-03de-4494-e82e-25bdfd9b1724",
+          "source": "50095f73-9c00-4231-991a-8cca886bbcb6",
+          "output": "CLICKED",
+          "target": "b63fee01-6a73-4383-8af6-9a0d590e8403",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ba4b134d-03e6-4594-d302-421ac98de011",
+          "source": "b63fee01-6a73-4383-8af6-9a0d590e8403",
+          "output": "value",
+          "target": "fcfe21e5-f260-4ccf-d746-b3b3f5e44436",
+          "input": "valor"
+        },
+        {
+          "objID": "4b749466-e0b3-4cbf-c533-5f873019c425",
+          "source": "9ad25a08-c7de-413e-c073-b377ef8b0013",
+          "output": "CLICKED",
+          "target": "d08747c6-8661-493c-dc5a-8bad1cf2656e",
           "input": "@seqin"
         }
       ],
