@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[pda-lilygo-tdeck.eez-project]:/userPages/1",
-    "selectedGlobalVariableObject": "[pda-lilygo-tdeck.eez-project]:/variables/globalVariables/10",
+    "selectedUserPageObject": "[pda-lilygo-tdeck.eez-project]:/userPages/6",
+    "selectedGlobalVariableObject": "[pda-lilygo-tdeck.eez-project]:/variables/globalVariables/6",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Local"
     }
@@ -80,7 +80,7 @@
           {
             "type": "border",
             "selected": 1,
-            "size": 153.5,
+            "size": 0,
             "location": "bottom",
             "children": [
               {
@@ -198,18 +198,41 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 71.12570356472796,
+              "weight": 35.56285178236398,
+              "selected": 4,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
                 {
                   "type": "tab",
-                  "id": "#6823370e-743b-4627-9886-4a49369e2d93",
+                  "id": "#6bd66c2f-753c-4d3b-ba06-fff49740ce09",
                   "name": "Calculator",
                   "component": "editor",
                   "config": {
                     "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/1",
                     "permanent": false
+                  },
+                  "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#4bcbd9b4-d317-4ad1-b09e-241cbbf81e9b",
+                  "name": "Calendar_EventsList",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/4",
+                    "permanent": true
+                  },
+                  "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#f946de9e-3845-49be-a210-2c12567bc482",
+                  "name": "Tasks_NewTasks",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/6",
+                    "permanent": true
                   },
                   "icon": "svg:page"
                 },
@@ -223,8 +246,20 @@
                     "permanent": true
                   },
                   "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#8a2eb918-529e-46c4-8a3f-57f31abcba2b",
+                  "name": "Tasks",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/5",
+                    "permanent": true
+                  },
+                  "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -234,7 +269,7 @@
                 {
                   "type": "tabset",
                   "id": "#58ee21ac-e5ec-43ec-9bd8-51f553a86e49",
-                  "weight": 2.4703389830508473,
+                  "weight": 1.6794425087108014,
                   "children": [
                     {
                       "type": "tab",
@@ -244,13 +279,12 @@
                       "enableClose": false,
                       "icon": "svg:properties"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
                   "id": "#699e5d80-dc0a-4ba9-9c12-9b281cf912ed",
-                  "weight": 0.5296610169491526,
+                  "weight": 1.3205574912891986,
                   "children": [
                     {
                       "type": "tab",
@@ -470,10 +504,10 @@
                 {
                   "type": "tab",
                   "id": "#8b99074a-8713-4b85-9be9-7ae38acb06c5",
-                  "name": "Calculator",
+                  "name": "Tasks",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/1",
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/5",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -1012,10 +1046,10 @@
       },
       "transform": {
         "translate": {
-          "x": -328.3571428571429,
-          "y": -375.6071428571429
+          "x": -501.3571428571429,
+          "y": -293.6071428571429
         },
-        "scale": 1
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1054,10 +1088,10 @@
       },
       "transform": {
         "translate": {
-          "x": -1200.54,
-          "y": -115.74000000000001
+          "x": -423.53999999999996,
+          "y": -251.74
         },
-        "scale": 1
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1069,14 +1103,12 @@
     "[pda-lilygo-tdeck.eez-project]:/userPages/2[flow-state]": {
       "selection": {
         "0": {},
-        "7": {
-          "$selected": true
-        }
+        "7": {}
       },
       "transform": {
         "translate": {
-          "x": -521.9867357755629,
-          "y": -97.58764997612946
+          "x": -364.9867357755629,
+          "y": 4.412350023870545
         },
         "scale": 1
       },
@@ -1095,14 +1127,18 @@
           }
         },
         "1": {},
-        "2": {}
+        "2": {},
+        "4": {
+          "$selected": true
+        },
+        "5": {}
       },
       "transform": {
         "translate": {
-          "x": -2213.738037313432,
-          "y": -254.40330643656716
+          "x": -424.73803731343196,
+          "y": -199.40330643656716
         },
-        "scale": 1.75
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1113,14 +1149,20 @@
     },
     "[pda-lilygo-tdeck.eez-project]:/userPages/5[flow-state]": {
       "selection": {
-        "0": {}
+        "0": {
+          "1": {
+            "$selected": true
+          },
+          "3": {},
+          "5": {}
+        }
       },
       "transform": {
         "translate": {
-          "x": -267,
-          "y": -230
+          "x": -407.61849999999913,
+          "y": -152.94999999999993
         },
-        "scale": 1
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1132,10 +1174,13 @@
     "[pda-lilygo-tdeck.eez-project]:/userPages/4[flow-state]": {
       "selection": {
         "0": {
+          "2": {},
           "3": {},
-          "4": {},
-          "5": {
+          "4": {
             "0": {}
+          },
+          "5": {
+            "$selected": true
           }
         },
         "8": {},
@@ -1143,10 +1188,10 @@
       },
       "transform": {
         "translate": {
-          "x": -350.64139646122226,
-          "y": -182.75859111239032
+          "x": -191.64139646122203,
+          "y": 79.24140888760968
         },
-        "scale": 1.75
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1172,17 +1217,19 @@
     "[pda-lilygo-tdeck.eez-project]:/userPages/6[flow-state]": {
       "selection": {
         "0": {
-          "0": {
+          "0": {},
+          "1": {
             "$selected": true
-          }
+          },
+          "3": {}
         }
       },
       "transform": {
         "translate": {
-          "x": -160,
-          "y": -120
+          "x": -517.0833333333334,
+          "y": -93.49999999999997
         },
-        "scale": 0.8
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,
@@ -1234,7 +1281,7 @@
   "searchMatchWholeWord": false,
   "replaceEnabled": false,
   "replaceText": "",
-  "pageRuntimeFrontFace": false,
+  "pageRuntimeFrontFace": true,
   "breakpoints": {},
   "watchExpressions": [],
   "showComponentDescriptions": false,
@@ -1248,6 +1295,6 @@
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
-  "flowZoom": 1,
+  "flowZoom": 0.75,
   "implementationLanguage": "C"
 }
