@@ -1,6 +1,7 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[pda-lilygo-tdeck.eez-project]:/userPages/6",
+    "selectedUserPageObject": "[pda-lilygo-tdeck.eez-project]:/userPages/10",
+    "selectedUserWidgetObject": "[pda-lilygo-tdeck.eez-project]:/userWidgets/2",
     "selectedGlobalVariableObject": "[pda-lilygo-tdeck.eez-project]:/variables/globalVariables/6",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Local"
@@ -175,7 +176,8 @@
                       "enableClose": false,
                       "icon": "svg:hierarchy"
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -205,12 +207,23 @@
               "children": [
                 {
                   "type": "tab",
-                  "id": "#6bd66c2f-753c-4d3b-ba06-fff49740ce09",
-                  "name": "Calculator",
+                  "id": "#186f9999-8377-4fac-ad56-631c1fd08566",
+                  "name": "MsgBox",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/1",
-                    "permanent": false
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userWidgets/2",
+                    "permanent": true
+                  },
+                  "icon": "svg:user_widget"
+                },
+                {
+                  "type": "tab",
+                  "id": "#6bd66c2f-753c-4d3b-ba06-fff49740ce09",
+                  "name": "Config",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/10",
+                    "permanent": true
                   },
                   "icon": "svg:page"
                 },
@@ -238,17 +251,6 @@
                 },
                 {
                   "type": "tab",
-                  "id": "#4120bffd-ea03-4fc5-a5b0-3c7343f59711",
-                  "name": "Main",
-                  "component": "editor",
-                  "config": {
-                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/0",
-                    "permanent": true
-                  },
-                  "icon": "svg:page"
-                },
-                {
-                  "type": "tab",
                   "id": "#8a2eb918-529e-46c4-8a3f-57f31abcba2b",
                   "name": "Tasks",
                   "component": "editor",
@@ -258,8 +260,7 @@
                   },
                   "icon": "svg:page"
                 }
-              ],
-              "active": true
+              ]
             },
             {
               "type": "row",
@@ -1150,11 +1151,12 @@
     "[pda-lilygo-tdeck.eez-project]:/userPages/5[flow-state]": {
       "selection": {
         "0": {
-          "1": {
-            "$selected": true
-          },
+          "1": {},
           "3": {},
-          "5": {}
+          "5": {},
+          "6": {
+            "$selected": true
+          }
         }
       },
       "transform": {
@@ -1257,7 +1259,7 @@
     "[pda-lilygo-tdeck.eez-project]:/userWidgets/2[flow-state]": {
       "selection": {
         "0": {
-          "$selected": true
+          "2": {}
         }
       },
       "transform": {
@@ -1265,7 +1267,35 @@
           "x": -160,
           "y": -120
         },
-        "scale": 0.9
+        "scale": 0.75
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
+      }
+    },
+    "[pda-lilygo-tdeck.eez-project]:/userPages/10[flow-state]": {
+      "selection": {
+        "0": {
+          "1": {
+            "0": {
+              "2": {
+                "0": {
+                  "$selected": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -483.95500000000015,
+          "y": -126
+        },
+        "scale": 0.75
       },
       "timeline": {
         "isEditorActive": false,

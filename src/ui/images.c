@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[15] = {
+const ext_img_desc_t images[17] = {
     { "img_calculator", &img_img_calculator },
     { "img_calendar", &img_img_calendar },
     { "img_tasks", &img_img_tasks },
@@ -16,4 +16,6 @@ const ext_img_desc_t images[15] = {
     { "lv_img_weather_cloud_sun", &img_lv_img_weather_cloud_sun },
     { "lv_img_weather_cloud_moon", &img_lv_img_weather_cloud_moon },
     { "lv_img_weather_cloud", &img_lv_img_weather_cloud },
+    { "img_maps", &img_img_maps },
+    { "img_config", &img_img_config },
 };

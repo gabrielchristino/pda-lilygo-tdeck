@@ -22,6 +22,8 @@ extern const lv_img_dsc_t img_lv_img_weather_mist;
 extern const lv_img_dsc_t img_lv_img_weather_cloud_sun;
 extern const lv_img_dsc_t img_lv_img_weather_cloud_moon;
 extern const lv_img_dsc_t img_lv_img_weather_cloud;
+extern const lv_img_dsc_t img_img_maps;
+extern const lv_img_dsc_t img_img_config;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T
@@ -31,7 +33,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[15];
+extern const ext_img_desc_t images[17];
 
 
 #ifdef __cplusplus
