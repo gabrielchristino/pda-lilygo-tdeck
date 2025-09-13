@@ -41,7 +41,7 @@ void remove_style_home_btn(lv_obj_t *obj) {
 
 void init_style_main_clock_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_align(style, LV_ALIGN_TOP_MID);
-    lv_style_set_text_font(style, &lv_font_montserrat_44);
+    lv_style_set_text_font(style, &ui_font_ubuntu_44);
     lv_style_set_text_align(style, LV_TEXT_ALIGN_CENTER);
 };
 
@@ -71,7 +71,7 @@ void remove_style_main_clock(lv_obj_t *obj) {
 
 void init_style_main_date_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_align(style, LV_ALIGN_TOP_MID);
-    lv_style_set_text_font(style, &lv_font_montserrat_24);
+    lv_style_set_text_font(style, &ui_font_ubuntu_24);
     lv_style_set_text_align(style, LV_TEXT_ALIGN_CENTER);
 };
 
@@ -100,7 +100,7 @@ void remove_style_main_date(lv_obj_t *obj) {
 //
 
 void init_style_body_text_MAIN_DEFAULT(lv_style_t *style) {
-    lv_style_set_text_font(style, &lv_font_montserrat_16);
+    lv_style_set_text_font(style, &ui_font_ubuntu_14);
 };
 
 lv_style_t *get_style_body_text_MAIN_DEFAULT() {
