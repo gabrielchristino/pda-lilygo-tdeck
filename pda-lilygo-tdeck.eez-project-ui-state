@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[pda-lilygo-tdeck.eez-project]:/userPages/5",
+    "selectedUserPageObject": "[pda-lilygo-tdeck.eez-project]:/userPages/0",
     "selectedGlobalVariableObject": "[pda-lilygo-tdeck.eez-project]:/variables/globalVariables/5",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Local"
@@ -257,8 +257,7 @@
                   },
                   "icon": "svg:page"
                 }
-              ],
-              "active": true
+              ]
             },
             {
               "type": "row",
@@ -278,7 +277,8 @@
                       "enableClose": false,
                       "icon": "svg:properties"
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -503,10 +503,10 @@
                 {
                   "type": "tab",
                   "id": "#8b99074a-8713-4b85-9be9-7ae38acb06c5",
-                  "name": "Tasks",
+                  "name": "Main",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/5",
+                    "objectPath": "[pda-lilygo-tdeck.eez-project]:/userPages/0",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -1104,7 +1104,8 @@
         "0": {
           "1": {},
           "10": {},
-          "43": {
+          "43": {},
+          "50": {
             "$selected": true
           }
         },
@@ -1112,8 +1113,8 @@
       },
       "transform": {
         "translate": {
-          "x": -411.28685095705674,
-          "y": -310.73373326967857
+          "x": -229.449275199481,
+          "y": -429.018581754527
         },
         "scale": 2
       },
